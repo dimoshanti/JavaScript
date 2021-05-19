@@ -1,0 +1,43 @@
+<html>
+<head>
+  <style>
+    #userinput {
+      width: 400px;
+      height: 50px;
+      text-align: center;
+      
+    }
+    #output {
+      text-align: center;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+<h1>Aufgabe 3</h1>
+<h2>Pangramm - ja oder nein?</h2>
+<h3>Ein Pangramm ist ein Satz, welcher jeden Buchstaben des Alphabets mind. einmal benutzt.</h3>
+<p>Bitte in folgendes Feld einen Satz schreiben:</p>
+<input type="text" id="userinput"></input>
+<button onclick="isPangram()">Überprüfen</button>
+<p id="output"></p>
+
+<script>
+  function isPangram(sentence) {
+    var abc = 'abcdefghijklmnopqrstuvwxyz';
+    var sentence = document.getElementById('userinput').value;
+    for(let char of abc) {
+      if(sentence.indexOf(char) === -1) {
+        document.getElementById('output').innerHTML =
+        "Dies ist kein Pangramm.";
+        document.getElementById("output").style.backgroundColor = "#ff9999";
+      } else {
+        document.getElementById('output').innerHTML =
+        "Dies ist ein Pangramm!";
+        document.getElementById("output").style.backgroundColor = "#b3ffb3";
+      }
+    } 
+  }
+</script>
+</body>
+</html>

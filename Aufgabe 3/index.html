@@ -1,0 +1,58 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Aufgabe 3</h1>
+<h2>Pangramm - ja oder nein?</h2>
+<h3>Ein Pangramm ist ein Satz, welcher jeden Buchstaben des Alphabets mind. einmal benutzt.</h3>
+<p>Bitte in folgendes Feld einen Satz schreiben:</p>
+<input type="text" id="userinput"></input>
+<button onclick="checkPangram()">Überprüfen</button>
+<p id="output" style="width: 250px"></p>
+
+<script>
+  function checkPangram() {
+    var abc = "abcdefgahijklmnopqrstuvwxyz";
+    abc = abc.split('');
+    return abc;
+  }
+
+  function checkLetter(letter, arr) {
+    var letter;
+    letter = document.getElementById('userinput').value;
+    for(let i = 0;i <= arr.length - 1; i++) {
+      if(letter === arr[i]) {
+        arr.splice(i, 1)
+      }
+    }
+  }
+
+  function allABC(string) {
+    let abc = createABC();
+    let str = string.split("").join("").split("");
+    for (let i = 0; i <= str.length; i++) {
+      checkLetter(str[i], abc)
+    }
+    if (abc.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function isPangram (strings) {
+   var result = [];
+   for (let i = 0; i <= strings.length -1 ; i++) {
+   if (allABC(strings[i])) {
+     document.getElementById('output').innerHTML =
+     "Es ist ein Pangramm."
+   } else {
+    document.getElementById('output').innerHTML =
+     "Es ist kein Pangramm."
+   }
+  }
+ return result.join("")
+}
+</script>
+</body>
+</html>

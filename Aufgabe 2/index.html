@@ -1,0 +1,32 @@
+<html>
+<head>	
+<script>
+	function check_schaltjahr(){
+		var year;
+		year = document.getElementById("userinput").value;
+ 
+		// 3 Bedingungen
+		if( (0 == year % 4) && (0 != year % 100) || (0 == year % 400) )
+		{
+			document.getElementById("output").innerHTML =
+            year + " ist ein Schaltjahr.";  
+			document.getElementById("output").style.backgroundColor = "#b3ffb3";
+		}
+		else
+		{
+			document.getElementById("output").innerHTML =
+            year + " ist kein Schaltjahr.";
+			document.getElementById("output").style.backgroundColor = "#ff9999";			
+        }  
+		}
+</script>
+</head>
+<body>
+<h1>Aufgabe 2</h1>
+<h2>Schaltjahr ja oder nein?</h2>
+<p>Bitte in folgendes Feld eine Jahreszahl eingeben:</p>
+<input type="text" id="userinput"></input>
+<button onclick="check_schaltjahr()">Überprüfen</button>
+<p id="output" style="width: 250px"></p>
+</body>
+</html>
